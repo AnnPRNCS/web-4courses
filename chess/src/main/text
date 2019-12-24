@@ -1,0 +1,243 @@
+<%@ page import="main.Main, java.util.*"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<% List<String> listWidth = new ArrayList<>();
+listWidth.add("coordinate1Width");
+listWidth.add("coordinate2Width");
+listWidth.add("coordinate3Width");
+listWidth.add("coordinate4Width");
+listWidth.add("coordinate5Width");
+listWidth.add("coordinate6Width");
+listWidth.add("coordinate7Width");
+listWidth.add("coordinate8Width");
+pageContext.setAttribute("listWidth", listWidth);
+
+List<String> listHeight = new ArrayList<>();
+listHeight.add("coordinate1Height");
+listHeight.add("coordinate2Height");
+listHeight.add("coordinate3Height");
+listHeight.add("coordinate4Height");
+listHeight.add("coordinate5Height");
+listHeight.add("coordinate6Height");
+listHeight.add("coordinate7Height");
+listHeight.add("coordinate8Height");
+pageContext.setAttribute("listHeight", listHeight);
+%>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .glav {
+    position:absolute;
+    top:10px;
+    left:10px;
+    border: 4px double black;
+    width:400px;
+    height:400px;
+    }
+    .smallWhite{
+    position:relative;
+    left:10px;
+    top:10px;
+    background:white;
+    width:30px;
+    height:30px;
+    text-align:  center;
+    border: 1px solid black;
+    }
+    .smallBlack{
+    position:relative;
+    left:10px;
+    top:10px;
+    background:black;
+    width:30px;
+    height:30px;
+    text-align:  center;
+    border: 1px solid white;
+    color:white;
+    }
+    .bl {
+    background:black;
+    width:50px;
+    height:50px;
+    }
+    .wt {
+    background:white;
+    width:50px;
+    height:50px;
+    }
+    .coordinate1Width{
+    position:absolute;
+    left:0px;
+    }
+    .coordinate1Height{
+    position:absolute;
+    top:0px;
+    }
+    .coordinate2Width{
+    position:absolute;
+    left:50px;
+    }
+    .coordinate2Height{
+    position:absolute;
+    top:50px;
+    }
+    .coordinate3Width{
+    position:absolute;
+    left:100px;
+    }
+    .coordinate3Height{
+    position:absolute;
+    top:100px;
+    }
+    .coordinate4Width{
+    position:absolute;
+    left:150px;
+    }
+    .coordinate4Height{
+    position:absolute;
+    top:150px;
+    }
+    .coordinate5Width{
+    position:absolute;
+    left:200px;
+    }
+    .coordinate5Height{
+    position:absolute;
+    top:200px;
+    }
+    .coordinate6Width{
+    position:absolute;
+    left:250px;
+    }
+    .coordinate6Height{
+    position:absolute;
+    top:250px;
+    }
+    .coordinate7Width{
+    position:absolute;
+    left:300px;
+    }
+    .coordinate7Height{
+    position:absolute;
+    top:300px;
+    }
+    .coordinate8Width{
+    position:absolute;
+    left:350px;
+    }
+    .coordinate8Height{
+    position:absolute;
+    top:350px;
+    }
+    .wtSmall{
+    text-align:  center;
+    color:black;
+    width:30px;
+    height:30px;
+    }
+
+    </style>
+</head>
+<body>
+<div class="glav">
+<c:set var="flag" value="true" />
+    <c:forEach var="itemWidth" items="${listWidth}" >
+        <c:forEach var="itemHeight" items="${listHeight}">
+            <c:choose>
+                <c:when test="${flag==true}">
+                    <div class="bl ${itemHeight} ${itemWidth} "></div>
+                    <c:set var="flag" value="false" />
+                </c:when>
+            <c:otherwise>
+                    <div class="wt ${itemHeight} ${itemWidth}  "></div>
+                     <c:set var="flag" value="true"/>
+            </c:otherwise>
+            </c:choose>
+        </c:forEach>
+         <c:choose>
+             <c:when test="${flag==false}">
+                  <c:set var="flag" value="true" />
+             </c:when>
+             <c:otherwise>
+                   <c:set var="flag" value="false"/>
+             </c:otherwise>
+         </c:choose>
+
+    </c:forEach>
+
+
+    <div class="smallWhite coordinate1Width coordinate1Height" >N
+    </div>
+    <div class="smallWhite coordinate2Width coordinate1Height" >B
+    </div>
+    <div class="smallWhite coordinate3Width coordinate1Height" >R
+    </div>
+    <div class="smallWhite coordinate4Width coordinate1Height" >K
+    </div>
+    <div class="smallWhite coordinate5Width coordinate1Height" >Q
+    </div>
+    <div class="smallWhite coordinate6Width coordinate1Height" >R
+    </div>
+    <div class="smallWhite coordinate7Width coordinate1Height" >B
+    </div>
+    <div class="smallWhite coordinate8Width coordinate1Height" >N
+    </div>
+
+    <div class="smallWhite coordinate1Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate2Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate3Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate4Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate5Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate6Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate7Width coordinate2Height" >p
+    </div>
+    <div class="smallWhite coordinate8Width coordinate2Height" >p
+    </div>
+   <div class="smallBlack coordinate1Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate2Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate3Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate4Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate5Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate6Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate7Width coordinate7Height" >p
+    </div>
+    <div class="smallBlack coordinate8Width coordinate7Height" >p
+    </div>
+
+    <div class="smallBlack coordinate1Width coordinate8Height" >N
+    </div>
+    <div class="smallBlack coordinate2Width coordinate8Height" >B
+    </div>
+    <div class="smallBlack coordinate3Width coordinate8Height" >R
+    </div>
+    <div class="smallBlack coordinate4Width coordinate8Height" >K
+    </div>
+    <div class="smallBlack coordinate5Width coordinate8Height" >Q
+    </div>
+    <div class="smallBlack coordinate6Width coordinate8Height" >R
+    </div>
+    <div class="smallBlack coordinate7Width coordinate8Height" >B
+    </div>
+    <div class="smallBlack coordinate8Width coordinate8Height">N
+    </div>
+
+</div>
+
+</body>
+</html>
